@@ -36,15 +36,41 @@ function getRandomNumber(min, max) {
         } 
  }, 1 * 1000);
 
+ setTimeout(chiediNumeri, 5000);
+
  function clearBox(numeriCasuali){
      document.getElementById("numeriCasuali").innerHTML = "";
 }
 
-let chiediNumeroUt = 0;
+let numeriInseritiUtente = [];
 function chiediNumeri(){
     for (let i = 0; i < 5; i++) {
-        chiediNumeroUt = prompt("Inserisci uno di quei numeri appena visualizzati");
+        var chiediNumeroUt = parseInt(prompt("Inserisci uno di quei numeri appena visualizzati"));
+        if(!numeriInseritiUtente.includes(chiediNumeroUt) && number.includes(chiediNumeroUt)){
+            numeriInseritiUtente.push(chiediNumeroUt);
+        }
+
     }
+    console.log(numeriInseritiUtente);
+
+    if (numeriInseritiUtente.length == 0){
+        console.log("FAI PENA");
+    } 
+    if (numeriInseritiUtente.length == 1){
+        alert("SEI SCARSO NE HAI INDOVINATO SOLO 1", numeriInseritiUtente.length);
+    } 
+    if (numeriInseritiUtente.length == 2){
+        alert("SEI MODESTAMENTE SCARSO NE HAI INDOVINATI SOLO 2", numeriInseritiUtente.length);
+    } 
+    if (numeriInseritiUtente.length == 3){
+        alert("SEI UN PRINCIPIANRE NE HAI INDOVINATO SOLO 3", numeriInseritiUtente.length);
+    } 
+    if (numeriInseritiUtente.length == 4){
+        alert("CI SEI QUASI NE HAI INDOVINATO 4", numeriInseritiUtente.length);
+    } 
+    if(numeriInseritiUtente.length == 5){
+        alert("SEI UN GRANDE, li hai indovinati tutti", numeriInseritiUtente.length)
+    }
+    
 }
 
-chiediNumeri();
