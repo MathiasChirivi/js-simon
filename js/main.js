@@ -1,6 +1,5 @@
 //console.log("Benvenuto!!");
-/*
-*/
+
 numeriCasuali = document.getElementById("numeriCasuali");
 btnStart = document.getElementsByClassName("start");
 numeriIndoviati = document.getElementById("NumeriIndovinati");
@@ -55,63 +54,31 @@ function chiediNumeri(){
         }
 
     }
-    console.log(numeriInseritiUtente);
+    //console.log(numeriInseritiUtente);
+    document.getElementById("numeriCasuali").innerHTML = `I numeri da ricordare erano :  ${number}`;
 
     if (numeriInseritiUtente.length == 0){
-        console.log("FAI PENA");
+        document.getElementById("risultato").innerHTML = ("FAI PENA");
     } 
     if (numeriInseritiUtente.length == 1){
-        alert("SEI SCARSO NE HAI INDOVINATO SOLO 1", `${numeriInseritiUtente}`);
+        document.getElementById("risultato").innerHTML = (`SEI SCARSO NE HAI INDOVINATO SOLO 1 ed è il : ${numeriInseritiUtente}`);
     } 
     if (numeriInseritiUtente.length == 2){
-        alert("SEI MODESTAMENTE SCARSO NE HAI INDOVINATI SOLO 2", `${numeriInseritiUtente}`);
+        document.getElementById("risultato").innerHTML = (`SEI MODESTAMENTE SCARSO NE HAI INDOVINATI SOLO 2 e sono : ${numeriInseritiUtente}`);
     } 
     if (numeriInseritiUtente.length == 3){
-        alert("SEI UN PRINCIPIANTE NE HAI INDOVINATO SOLO 3", + `${numeriInseritiUtente}`);
+        document.getElementById("risultato").innerHTML = (`SEI UN PRINCIPIANTE NE HAI INDOVINATI SOLO 3 e sono : ${numeriInseritiUtente}`);
     } 
     if (numeriInseritiUtente.length == 4){
-        alert("CI SEI QUASI NE HAI INDOVINATO 4", `${numeriInseritiUtente}`);
+        document.getElementById("risultato").innerHTML = (`CI SEI QUASI NE HAI INDOVINATI 4 e sono : ${numeriInseritiUtente}`);
     } 
     if(numeriInseritiUtente.length == 5){
-        alert("SEI UN GRANDE, li hai indovinati tutti", `${numeriInseritiUtente}`)
+        document.getElementById("risultato").innerHTML = (`SEI UN GRANDE, li hai indovinati tutti : ${numeriInseritiUtente}`)
     }
     
 }
-/*
-numeriCasuali = document.getElementById("numeriCasuali");
-btnStart = document.getElementById("start");
-numeriIndoviati = document.getElementById("NumeriIndovinati");
-resulte = document.getElementById("risultato");
 
-let number = [];
 
-btnStart.addEventListener(`click`, function () {
-    
-    console.log("Gioco Avviato");
-    getRandomNumber(0,100);
-    
-    document.getElementById("start").style.display = "none";
-    
-    console.log("I numeri da ricordare sono : ", number);
-    
-    document.getElementById("numeriCasuali").innerHTML = number;
-    
-    let secondi = 3;
-    alert("Ora partirà un timer di 30 secondi, e devi riuscire a ricordare quanti piu numeri possibili");
-})
-
-function getRandomNumber(min, max) {
-    for (let i = 0; i < 5; i++) {
-        min = parseInt(min);
-        max = parseInt(max);
-        let numeroCasuale = Math.floor(Math.random() * ((max + 1) - min) + min);
-        if (!number.includes(numeroCasuale)) {
-            number.push(numeroCasuale);
-        }
-        console.log(numeroCasuale);
-    }   
-}
-*/
 
 
 
